@@ -1,11 +1,11 @@
 /**
  ****************************************************************************************************
  * @file        rs485.h
- * @author      ÕýµãÔ­×ÓÍÅ¶Ó(ALIENTEK)
+ * @author      ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½Å¶ï¿½(ALIENTEK)
  * @version     V1.0
  * @date        2022-07-19
- * @brief       RS485 Çý¶¯´úÂë
- * @license     Copyright (c) 2020-2032, ¹ãÖÝÊÐÐÇÒíµç×Ó¿Æ¼¼ÓÐÏÞ¹«Ë¾
+ * @brief       RS485 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * @license     Copyright (c) 2020-2032, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿Æ¼ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾
  ****************************************************************************************************
  */
 
@@ -16,33 +16,33 @@
 
 
 /******************************************************************************************/
-/* RS485 Òý½Å ºÍ ´®¿Ú ¶¨Òå 
- * Ä¬ÈÏÊÇÕë¶ÔRS485µÄ.
- * ×¢Òâ: Í¨¹ýÐÞ¸ÄÕâ10¸öºê¶¨Òå, ¿ÉÒÔÖ§³ÖUART1~UART7ÈÎÒâÒ»¸ö´®¿Ú.
+/* RS485 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+ * Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½RS485ï¿½ï¿½.
+ * ×¢ï¿½ï¿½: Í¨ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½10ï¿½ï¿½ï¿½ê¶¨ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½UART1~UART7ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
  */
 #define RS485_TX_GPIO_PORT                  GPIOA
 #define RS485_TX_GPIO_PIN                   GPIO_PIN_15
-#define RS485_TX_GPIO_CLK_ENABLE()          do{ __HAL_RCC_GPIOA_CLK_ENABLE(); }while(0)   /* PA¿ÚÊ±ÖÓÊ¹ÄÜ */
+#define RS485_TX_GPIO_CLK_ENABLE()          do{ __HAL_RCC_GPIOA_CLK_ENABLE(); }while(0)   /* PAï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
 
 #define RS485_RX_GPIO_PORT                  GPIOB
 #define RS485_RX_GPIO_PIN                   GPIO_PIN_3
-#define RS485_RX_GPIO_CLK_ENABLE()          do{ __HAL_RCC_GPIOB_CLK_ENABLE(); }while(0)   /* PB¿ÚÊ±ÖÓÊ¹ÄÜ */
+#define RS485_RX_GPIO_CLK_ENABLE()          do{ __HAL_RCC_GPIOB_CLK_ENABLE(); }while(0)   /* PBï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
 
 #define RS485_UX                            UART7
 #define RS485_UX_IRQn                       UART7_IRQn
 #define RS485_UX_IRQHandler                 UART7_IRQHandler
-#define RS485_UX_CLK_ENABLE()               __HAL_RCC_UART7_CLK_ENABLE()    /* USART7 Ê±ÖÓÊ¹ÄÜ */
+#define RS485_UX_CLK_ENABLE()               __HAL_RCC_UART7_CLK_ENABLE()    /* USART7 Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
 
-#define RE_GPIO_CLK_ENABLE()          do{ __HAL_RCC_GPIOB_CLK_ENABLE(); }while(0) /* PB¿ÚÊ±ÖÓÊ¹ÄÜ */
+#define RE_GPIO_CLK_ENABLE()          do{ __HAL_RCC_GPIOB_CLK_ENABLE(); }while(0) /* PBï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
 
 /******************************************************************************************/
 
-/* Èç¹ûÏë´®¿ÚÖÐ¶Ï½ÓÊÕ£¬ÉèÖÃEN_USART7_RXÎª1£¬·ñÔòÉèÖÃÎª0 */
-#define EN_USART7_RX               1                /* 0,²»½ÓÊÕ;1,½ÓÊÕ. */
-#define RS485_REC_LEN              64               /* ¶¨Òå×î´ó½ÓÊÕ×Ö½ÚÊý 64 */
+/* ï¿½ï¿½ï¿½ï¿½ë´®ï¿½ï¿½ï¿½Ð¶Ï½ï¿½ï¿½Õ£ï¿½ï¿½ï¿½ï¿½ï¿½EN_USART7_RXÎª1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0 */
+#define EN_USART7_RX               1                /* 0,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;1,ï¿½ï¿½ï¿½ï¿½. */
+#define RS485_REC_LEN              64               /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ 64 */
 
-extern uint8_t g_RS485_rx_buf[RS485_REC_LEN];       /* ½ÓÊÕ»º³å,×î´óRS485_REC_LEN¸ö×Ö½Ú */
-extern uint8_t g_RS485_rx_cnt;                      /* ½ÓÊÕµ½µÄÊý¾Ý³¤¶È */
+extern uint8_t g_RS485_rx_buf[RS485_REC_LEN];       /* ï¿½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½RS485_REC_LENï¿½ï¿½ï¿½Ö½ï¿½ */
+extern uint8_t g_RS485_rx_cnt;                      /* ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý³ï¿½ï¿½ï¿½ */
 
 void rs485_init(uint32_t bound);
 void rs485_send_data(uint8_t *buf, uint8_t len);

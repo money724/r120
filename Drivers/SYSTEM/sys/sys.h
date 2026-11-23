@@ -1,23 +1,23 @@
 /**
  ****************************************************************************************************
  * @file        sys.h
- * @author      ÕýµãÔ­×ÓÍÅ¶Ó(ALIENTEK)
+ * @author      ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½Å¶ï¿½(ALIENTEK)
  * @version     V1.0
  * @date        2022-07-19
- * @brief       ÏµÍ³³õÊ¼»¯´úÂë(°üÀ¨Ê±ÖÓÅäÖÃ/ÖÐ¶Ï¹ÜÀí/GPIOÉèÖÃµÈ)
- * @license     Copyright (c) 2020-2032, ¹ãÖÝÊÐÐÇÒíµç×Ó¿Æ¼¼ÓÐÏÞ¹«Ë¾
+ * @brief       ÏµÍ³ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½Ð¶Ï¹ï¿½ï¿½ï¿½/GPIOï¿½ï¿½ï¿½Ãµï¿½)
+ * @license     Copyright (c) 2020-2032, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿Æ¼ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾
  ****************************************************************************************************
  * @attention
  *
- * ÊµÑéÆ½Ì¨:ÕýµãÔ­×Ó °¢²¨ÂÞ F767¿ª·¢°å
- * ÔÚÏßÊÓÆµ:www.yuanzige.com
- * ¼¼ÊõÂÛÌ³:www.openedv.com
- * ¹«Ë¾ÍøÖ·:www.alientek.com
- * ¹ºÂòµØÖ·:openedv.taobao.com
+ * Êµï¿½ï¿½Æ½Ì¨:ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ F767ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµ:www.yuanzige.com
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì³:www.openedv.com
+ * ï¿½ï¿½Ë¾ï¿½ï¿½Ö·:www.alientek.com
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Ö·:openedv.taobao.com
  *
- * ÐÞ¸ÄËµÃ÷
+ * ï¿½Þ¸ï¿½Ëµï¿½ï¿½
  * V1.0 20220719
- * µÚÒ»´Î·¢²¼
+ * ï¿½ï¿½Ò»ï¿½Î·ï¿½ï¿½ï¿½
  ****************************************************************************************************
  */
 
@@ -30,9 +30,9 @@
 
 
 /**
- * SYS_SUPPORT_OSÓÃÓÚ¶¨ÒåÏµÍ³ÎÄ¼þ¼ÐÊÇ·ñÖ§³ÖOS
- * 0,²»Ö§³ÖOS
- * 1,Ö§³ÖOS
+ * SYS_SUPPORT_OSï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½ÏµÍ³ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Ö§ï¿½ï¿½OS
+ * 0,ï¿½ï¿½Ö§ï¿½ï¿½OS
+ * 1,Ö§ï¿½ï¿½OS
  */
 #define SYS_SUPPORT_OS         0
 
@@ -40,19 +40,19 @@
 #define OFF  0
 #define      Write_Through()    do{ *(__IO uint32_t*)0XE000EF9C = 1UL << 2; }while(0)     /* CacheÍ¸Ð´Ä£Ê½ */
 
-void sys_cache_enable(void);                                                              /* Ê¹ÄÜSTM32F7µÄL1-Cahce */
-uint8_t sys_stm32_clock_init(uint32_t plln, uint32_t pllm, uint32_t pllp, uint32_t pllq); /* ÅäÖÃÏµÍ³Ê±ÖÓ */
-uint8_t get_icache_sta(void);                                                              /* ÅÐ¶ÏI_CacheÊÇ·ñ´ò¿ª */
-uint8_t get_dcache_sta(void);                                                              /* ÅÐ¶ÏI_DacheÊÇ·ñ´ò¿ª */
+void sys_cache_enable(void);                                                              /* Ê¹ï¿½ï¿½STM32F7ï¿½ï¿½L1-Cahce */
+uint8_t sys_stm32_clock_init(uint32_t plln, uint32_t pllm, uint32_t pllp, uint32_t pllq); /* ï¿½ï¿½ï¿½ï¿½ÏµÍ³Ê±ï¿½ï¿½ */
+uint8_t get_icache_sta(void);                                                              /* ï¿½Ð¶ï¿½I_Cacheï¿½Ç·ï¿½ï¿½ */
+uint8_t get_dcache_sta(void);                                                              /* ï¿½Ð¶ï¿½I_Dacheï¿½Ç·ï¿½ï¿½ */
 
 
 /******************************************************************************************/
 
-/* ÒÔÏÂÎª»ã±àº¯Êý */
-void sys_wfi_set(void);             /* Ö´ÐÐWFIÖ¸Áî */
-void sys_intx_disable(void);        /* ¹Ø±ÕËùÓÐÖÐ¶Ï */
-void sys_intx_enable(void);         /* ¿ªÆôËùÓÐÖÐ¶Ï */
-void sys_msr_msp(uint32_t addr);    /* ÉèÖÃÕ»¶¥µØÖ· */
+/* ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½àº¯ï¿½ï¿½ */
+void sys_wfi_set(void);             /* Ö´ï¿½ï¿½WFIÖ¸ï¿½ï¿½ */
+void sys_intx_disable(void);        /* ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ */
+void sys_intx_enable(void);         /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ */
+void sys_msr_msp(uint32_t addr);    /* ï¿½ï¿½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½Ö· */
 
 #endif
 

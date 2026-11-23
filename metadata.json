@@ -1,0 +1,5 @@
+{
+  "name": "R120 FMCW Radar Workbench",
+  "description": "Web simulator and DSP verification workbench ported from the STM32F767 120 GHz FMCW radar level meter firmware (ADF4159 ramp planner, 4096-pt FFT, 129-pt CZT, phase coherence, range solver, and peripheral monitors).",
+  "requestFramePermissions": []
+}

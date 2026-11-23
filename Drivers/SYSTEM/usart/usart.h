@@ -1,23 +1,23 @@
 /**
  ****************************************************************************************************
  * @file        usart.h
- * @author      ÕýµãÔ­×ÓÍÅ¶Ó(ALIENTEK)
+ * @author      ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½Å¶ï¿½(ALIENTEK)
  * @version     V1.0
  * @date        2022-07-19
- * @brief       ´®¿Ú³õÊ¼»¯´úÂë(Ò»°ãÊÇ´®¿Ú1)£¬Ö§³Öprintf
- * @license     Copyright (c) 2020-2032, ¹ãÖÝÊÐÐÇÒíµç×Ó¿Æ¼¼ÓÐÏÞ¹«Ë¾
+ * @brief       ï¿½ï¿½ï¿½Ú³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Ò»ï¿½ï¿½ï¿½Ç´ï¿½ï¿½ï¿½1)ï¿½ï¿½Ö§ï¿½ï¿½printf
+ * @license     Copyright (c) 2020-2032, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿Æ¼ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾
  ****************************************************************************************************
  * @attention
  *
- * ÊµÑéÆ½Ì¨:ÕýµãÔ­×Ó °¢²¨ÂÞ F767¿ª·¢°å
- * ÔÚÏßÊÓÆµ:www.yuanzige.com
- * ¼¼ÊõÂÛÌ³:www.openedv.com
- * ¹«Ë¾ÍøÖ·:www.alientek.com
- * ¹ºÂòµØÖ·:openedv.taobao.com
+ * Êµï¿½ï¿½Æ½Ì¨:ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ F767ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµ:www.yuanzige.com
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì³:www.openedv.com
+ * ï¿½ï¿½Ë¾ï¿½ï¿½Ö·:www.alientek.com
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Ö·:openedv.taobao.com
  *
- * ÐÞ¸ÄËµÃ÷
+ * ï¿½Þ¸ï¿½Ëµï¿½ï¿½
  * V1.0 20220719
- * µÚÒ»´Î·¢²¼
+ * ï¿½ï¿½Ò»ï¿½Î·ï¿½ï¿½ï¿½
  *
  ****************************************************************************************************
  */
@@ -29,38 +29,38 @@
 #include "./SYSTEM/sys/sys.h"
 
 /*******************************************************************************************************/
-/* Òý½Å ºÍ ´®¿Ú ¶¨Òå */
+/* ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 
 #define USART_TX_GPIO_PORT              GPIOA
 #define USART_TX_GPIO_PIN               GPIO_PIN_9
 #define USART_TX_GPIO_AF                GPIO_AF7_USART1
-#define USART_TX_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOA_CLK_ENABLE(); }while(0)   /* ·¢ËÍÒý½ÅÊ±ÖÓÊ¹ÄÜ */
+#define USART_TX_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOA_CLK_ENABLE(); }while(0)   /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
 
 #define USART_RX_GPIO_PORT              GPIOA
 #define USART_RX_GPIO_PIN               GPIO_PIN_10
 #define USART_RX_GPIO_AF                GPIO_AF7_USART1
-#define USART_RX_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOA_CLK_ENABLE(); }while(0)   /* ½ÓÊÕÒý½ÅÊ±ÖÓÊ¹ÄÜ */
+#define USART_RX_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOA_CLK_ENABLE(); }while(0)   /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
 
 #define USART_UX                        USART1
 #define USART_UX_IRQn                   USART1_IRQn
 #define USART_UX_IRQHandler             USART1_IRQHandler
-#define USART_UX_CLK_ENABLE()           do{ __HAL_RCC_USART1_CLK_ENABLE(); }while(0)  /* USART1 Ê±ÖÓÊ¹ÄÜ */
+#define USART_UX_CLK_ENABLE()           do{ __HAL_RCC_USART1_CLK_ENABLE(); }while(0)  /* USART1 Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
 
 /*******************************************************************************************************/
 
-#define USART_REC_LEN   200                     /* ¶¨Òå×î´ó½ÓÊÕ×Ö½ÚÊý 200 */
-#define USART_EN_RX     1                       /* Ê¹ÄÜ£¨1£©/½ûÖ¹£¨0£©´®¿Ú1½ÓÊÕ */
-#define RXBUFFERSIZE    1                       /* »º´æ´óÐ¡ */
+#define USART_REC_LEN   200                     /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ 200 */
+#define USART_EN_RX     1                       /* Ê¹ï¿½Ü£ï¿½1ï¿½ï¿½/ï¿½ï¿½Ö¹ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ */
+#define RXBUFFERSIZE    1                       /* ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ */
 
-extern UART_HandleTypeDef g_uart1_handle;       /* UART¾ä±ú */
+extern UART_HandleTypeDef g_uart1_handle;       /* UARTï¿½ï¿½ï¿½ */
 
-extern uint8_t  g_usart_rx_buf[USART_REC_LEN];  /* ½ÓÊÕ»º³å,×î´óUSART_REC_LEN¸ö×Ö½Ú.Ä©×Ö½ÚÎª»»ÐÐ·û */
-extern uint16_t g_usart_rx_sta;                 /* ½ÓÊÕ×´Ì¬±ê¼Ç */
-extern uint8_t g_rx_buffer[RXBUFFERSIZE];       /* HAL¿âUSART½ÓÊÕBuffer */
+extern uint8_t  g_usart_rx_buf[USART_REC_LEN];  /* ï¿½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½USART_REC_LENï¿½ï¿½ï¿½Ö½ï¿½.Ä©ï¿½Ö½ï¿½Îªï¿½ï¿½ï¿½Ð·ï¿½ */
+extern uint16_t g_usart_rx_sta;                 /* ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ */
+extern uint8_t g_rx_buffer[RXBUFFERSIZE];       /* HALï¿½ï¿½USARTï¿½ï¿½ï¿½ï¿½Buffer */
 
 /******************************************************************************************/
 
-void usart_init(uint32_t baudrate);             /* ´®¿Ú³õÊ¼»¯º¯Êý */
+void usart_init(uint32_t baudrate);             /* ï¿½ï¿½ï¿½Ú³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 
 #endif
 

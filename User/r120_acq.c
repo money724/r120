@@ -237,35 +237,35 @@ void HAL_ADC_ErrorCallback(ADC_HandleTypeDef *hadc)
 void measure(void)
 {
 	
-	  /* ÔÚÖÐ¶ÏÍâ²¿´¦ÀíADC/DMA²ÉÑùÍê³ÉÊÂ¼þ */
+	  /* ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ADC/DMAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ */
 	  R120_ACQ_Service();
 
 	  R120_ACQ_Status acq_status = R120_ACQ_GetStatus();
 	  r120_acq_state_watch = (uint32_t)acq_status;
 
-	  /* ¼ÇÂ¼Ò»´ÎÍêÕûÖ¡ÐÅÏ¢£¨Ö»¼ÇÂ¼Ò»´Î£© */
+	  /* ï¿½ï¿½Â¼Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¡ï¿½ï¿½Ï¢ï¿½ï¿½Ö»ï¿½ï¿½Â¼Ò»ï¿½Î£ï¿½ */
 	  if ((acq_status == R120_ACQ_STATUS_DONE) &&
 	      (r120_acq_frame_recorded == 0U))
 	  {
 	      const uint32_t *raw = R120_ACQ_GetRawBuffer();
 
 	      uint32_t first = raw[0];
-        //È¡³öµÚÒ»¸ö32bitÊý¾ÝÀïµÄI,Q·ÖÁ¿£¨¸÷12bit£©
+        //È¡ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½32bitï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½I,Qï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½12bitï¿½ï¿½
 	      r120_acq_first_i = (uint16_t)(first & 0x0FFFU);
 	      r120_acq_first_q = (uint16_t)((first >> 16) & 0x0FFFU);
-        //×îºóÒ»¸ö²ÉÑùµã
+        //ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	      r120_acq_last_raw =raw[R120_ACQ_SAMPLE_COUNT - 1U];
 
-	      r120_acq_frame_count++;    //Ö¡¼ÆÊý+1
-	      r120_acq_frame_recorded = 1U; //±ê¼Ç±¾Ö¡ÒÑ¾­¼ÇÂ¼
+	      r120_acq_frame_count++;    //Ö¡ï¿½ï¿½ï¿½ï¿½+1
+	      r120_acq_frame_recorded = 1U; //ï¿½ï¿½Ç±ï¿½Ö¡ï¿½Ñ¾ï¿½ï¿½ï¿½Â¼
 	  }
 
-	  /* ½öÔÚÊÕµ½²É¼¯ÇëÇóÊ±£¬²ÅÆô¶¯Ò»´Î²Á¼Á*/
+	  /* ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½É¼ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Î²ï¿½ï¿½ï¿½*/
 	  if (r120_acq_request == 1U)
 	  {
-	      r120_acq_request = 0U;   //Çå³þ²É¼¯Íê³É±êÖ¾
+	      r120_acq_request = 0U;   //ï¿½ï¿½ï¿½ï¿½É¼ï¿½ï¿½ï¿½É±ï¿½Ö¾
 
-	      /* Èç¹ûÓÐÒÑ¾­Íê³ÉµÄ¾ÉÖ¡£¬ÐèÒªÏÈ¸´Î» */
+	      /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ÉµÄ¾ï¿½Ö¡ï¿½ï¿½ï¿½ï¿½Òªï¿½È¸ï¿½Î» */
 	      if (acq_status == R120_ACQ_STATUS_DONE)
 	      {
 	          r120_acq_start_return =
@@ -273,16 +273,16 @@ void measure(void)
 
 	          acq_status = R120_ACQ_GetStatus();
 	      }
-        //×´Ì¬¿ÕÏÐÊ±£¬²Å¿ÉÒÔ¿ªÆôÐÂÒ»ÂÖ²É¼¯
+        //×´Ì¬ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Å¿ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Ö²É¼ï¿½
 	      if (acq_status == R120_ACQ_STATUS_IDLE)
 	      {
-	          r120_acq_frame_recorded = 0U;  //Çå¿Õ±¾Ö¡ÒÑ¾­¼ÇÂ¼±ê¼Ç£¬×¼±¸½ÓÊÕÐÂÖ¡
+	          r120_acq_frame_recorded = 0U;  //ï¿½ï¿½Õ±ï¿½Ö¡ï¿½Ñ¾ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Ç£ï¿½×¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¡
 
-	          r120_acq_start_return =(uint32_t)R120_ACQ_Start();   //Æô¶¯ADC²É¼¯
+	          r120_acq_start_return =(uint32_t)R120_ACQ_Start();   //ï¿½ï¿½ï¿½ï¿½ADCï¿½É¼ï¿½
 	      }
 	      else
 	      {
-	          r120_acq_start_return = (uint32_t)HAL_BUSY;   //·Ç¿ÕÏÐ×´Ì¬£¬·µ»ØBUSY
+	          r120_acq_start_return = (uint32_t)HAL_BUSY;   //ï¿½Ç¿ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½BUSY
 	      }
 	  }
 

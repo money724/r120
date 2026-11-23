@@ -2,15 +2,15 @@
 #define _SENSOR_H
 
 /******************************************************************************************/
-/* Òý½Å ¶¨Òå */
+/* ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 
 #define LED_GPIO_PORT               GPIOA
 #define LED_GPIO_PIN                GPIO_PIN_11
-#define LED_GPIO_CLK_ENABLE()       do{ __HAL_RCC_GPIOA_CLK_ENABLE(); }while(0)   /* PA¿ÚÊ±ÖÓÊ¹ÄÜ */
+#define LED_GPIO_CLK_ENABLE()       do{ __HAL_RCC_GPIOA_CLK_ENABLE(); }while(0)   /* PAï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
 
 /******************************************************************************************/
 
-/* IO²Ù×÷ */
+/* IOï¿½ï¿½ï¿½ï¿½ */
 #define LED(x)        do{ x ? \
                               HAL_GPIO_WritePin(LED_GPIO_PORT, LED_GPIO_PIN, GPIO_PIN_SET) : \
                               HAL_GPIO_WritePin(LED_GPIO_PORT, LED_GPIO_PIN, GPIO_PIN_RESET); \

@@ -1,38 +1,38 @@
 /**
  ****************************************************************************************************
  * @file        rs485.c
- * @author      ÕýµãÔ­×ÓÍÅ¶Ó(ALIENTEK)
+ * @author      ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½Å¶ï¿½(ALIENTEK)
  * @version     V1.0
  * @date        2022-7-19
- * @brief       RS485 Çý¶¯´úÂë
- * @license     Copyright (c) 2020-2032, ¹ãÖÝÊÐÐÇÒíµç×Ó¿Æ¼¼ÓÐÏÞ¹«Ë¾
+ * @brief       RS485 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * @license     Copyright (c) 2020-2032, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿Æ¼ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾
  ****************************************************************************************************
  */
 
 #include "./rs485.h"
 #include "./SYSTEM/delay/delay.h"
 
-UART_HandleTypeDef g_rs458_handle;   /* USART7¾ä±ú(ÓÃÓÚRS485) */
+UART_HandleTypeDef g_rs458_handle;   /* USART7ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½RS485) */
 
-#if EN_USART7_RX                     /* Èç¹ûÊ¹ÄÜÁË½ÓÊÕ */
+#if EN_USART7_RX                     /* ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½Ë½ï¿½ï¿½ï¿½ */
 
-/* ½ÓÊÕ»º´æÇø */
-uint8_t g_RS485_rx_buf[64];          /* ½ÓÊÕ»º³å,×î´ó64¸ö×Ö½Ú. */
+/* ï¿½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½ï¿½ */
+uint8_t g_RS485_rx_buf[64];          /* ï¿½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½64ï¿½ï¿½ï¿½Ö½ï¿½. */
 
-/* ½ÓÊÕµ½µÄÊý¾Ý³¤¶È */
+/* ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý³ï¿½ï¿½ï¿½ */
 uint8_t g_RS485_rx_cnt = 0;
 
 void UART7_IRQHandler(void)
 {
     uint8_t res;
 
-    if ((__HAL_UART_GET_FLAG(&g_rs458_handle, UART_FLAG_RXNE) != RESET))  /* ½ÓÊÕÖÐ¶Ï */
+    if ((__HAL_UART_GET_FLAG(&g_rs458_handle, UART_FLAG_RXNE) != RESET))  /* ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ */
     {
         HAL_UART_Receive(&g_rs458_handle, &res, 1, 1000);
         if (g_RS485_rx_cnt < 64)
        {
-            g_RS485_rx_buf[g_RS485_rx_cnt] = res;   /* ¼ÇÂ¼½ÓÊÕµ½µÄÖµ */
-            g_RS485_rx_cnt++;                       /* ½ÓÊÕÊý¾ÝÔö¼Ó1  */
+            g_RS485_rx_buf[g_RS485_rx_cnt] = res;   /* ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½Öµ */
+            g_RS485_rx_cnt++;                       /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1  */
        } 
     } 
 }
@@ -42,123 +42,123 @@ uint8_t RE_init(void)
 {
     uint8_t temp = 0;
     GPIO_InitTypeDef gpio_init_struct;
-    RE_GPIO_CLK_ENABLE();                               /* Ê¹ÄÜGPIOBÊ±ÖÓ */
+    RE_GPIO_CLK_ENABLE();                               /* Ê¹ï¿½ï¿½GPIOBÊ±ï¿½ï¿½ */
 
     gpio_init_struct.Pin = GPIO_PIN_4;                 /* PB4 */
-    gpio_init_struct.Mode = GPIO_MODE_OUTPUT_PP;                 /* Êä³ö */
-    gpio_init_struct.Pull = GPIO_PULLUP;                     /* ÉÏÀ­ */
-    gpio_init_struct.Speed = GPIO_SPEED_HIGH;                /* ¸ßËÙ */
-    HAL_GPIO_Init(GPIOB, &gpio_init_struct);     /* ³õÊ¼»¯ */
+    gpio_init_struct.Mode = GPIO_MODE_OUTPUT_PP;                 /* ï¿½ï¿½ï¿½ */
+    gpio_init_struct.Pull = GPIO_PULLUP;                     /* ï¿½ï¿½ï¿½ï¿½ */
+    gpio_init_struct.Speed = GPIO_SPEED_HIGH;                /* ï¿½ï¿½ï¿½ï¿½ */
+    HAL_GPIO_Init(GPIOB, &gpio_init_struct);     /* ï¿½ï¿½Ê¼ï¿½ï¿½ */
 	
-	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);  /* Ä¬ÈÏ½ÓÊÕ*/
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);  /* Ä¬ï¿½Ï½ï¿½ï¿½ï¿½*/
 }
 
 /**
- * @brief       RS485³õÊ¼»¯º¯Êý
- *  @note       ¸Ãº¯ÊýÖ÷ÒªÊÇ³õÊ¼»¯´®¿Ú
- * @param       bound:²¨ÌØÂÊ
- * @retval      ÎÞ
+ * @brief       RS485ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ *  @note       ï¿½Ãºï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ç³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * @param       bound:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * @retval      ï¿½ï¿½
  */
 void rs485_init(uint32_t bound)
 {
-    /* GPIO¶Ë¿ÚÉèÖÃ */
+    /* GPIOï¿½Ë¿ï¿½ï¿½ï¿½ï¿½ï¿½ */
     GPIO_InitTypeDef gpio_init_struct;
 
-    RE_init();                   /* ³õÊ¼»¯ÓÃÓÚ¿ØÖÆRE½Å */
+    RE_init();                   /* ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½REï¿½ï¿½ */
 
-    RS485_TX_GPIO_CLK_ENABLE();       /* Ê¹ÄÜGPIOAÊ±ÖÓ */
-	  RS485_RX_GPIO_CLK_ENABLE();        /* Ê¹ÄÜGPIOBÊ±ÖÓ */
-    RS485_UX_CLK_ENABLE();            /* Ê¹ÄÜUSART7Ê±ÖÓ */
+    RS485_TX_GPIO_CLK_ENABLE();       /* Ê¹ï¿½ï¿½GPIOAÊ±ï¿½ï¿½ */
+	  RS485_RX_GPIO_CLK_ENABLE();        /* Ê¹ï¿½ï¿½GPIOBÊ±ï¿½ï¿½ */
+    RS485_UX_CLK_ENABLE();            /* Ê¹ï¿½ï¿½USART7Ê±ï¿½ï¿½ */
 
     gpio_init_struct.Pin = RS485_TX_GPIO_PIN;     /* PA15 */
-    gpio_init_struct.Mode = GPIO_MODE_AF_PP;                      /* ¸´ÓÃÍÆÍì */
-    gpio_init_struct.Pull = GPIO_PULLUP;                          /* ÉÏÀ­ */
-    gpio_init_struct.Speed = GPIO_SPEED_HIGH;                     /* ¸ßËÙ */
-    gpio_init_struct.Alternate = GPIO_AF12_UART7;                 /* ¸´ÓÃÎªUSART7 */
-    HAL_GPIO_Init(RS485_TX_GPIO_PORT, &gpio_init_struct);         /* ³õÊ¼»¯PA15 */
+    gpio_init_struct.Mode = GPIO_MODE_AF_PP;                      /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+    gpio_init_struct.Pull = GPIO_PULLUP;                          /* ï¿½ï¿½ï¿½ï¿½ */
+    gpio_init_struct.Speed = GPIO_SPEED_HIGH;                     /* ï¿½ï¿½ï¿½ï¿½ */
+    gpio_init_struct.Alternate = GPIO_AF12_UART7;                 /* ï¿½ï¿½ï¿½ï¿½ÎªUSART7 */
+    HAL_GPIO_Init(RS485_TX_GPIO_PORT, &gpio_init_struct);         /* ï¿½ï¿½Ê¼ï¿½ï¿½PA15 */
 	
 	  gpio_init_struct.Pin = RS485_RX_GPIO_PIN; /* PB3 */
-    gpio_init_struct.Mode = GPIO_MODE_AF_PP;                      /* ¸´ÓÃÍÆÍì */
-    gpio_init_struct.Pull = GPIO_PULLUP;                          /* ÉÏÀ­ */
-    gpio_init_struct.Speed = GPIO_SPEED_HIGH;                     /* ¸ßËÙ */
-    gpio_init_struct.Alternate = GPIO_AF12_UART7;                 /* ¸´ÓÃÎªUSART7 */
-    HAL_GPIO_Init(RS485_RX_GPIO_PORT, &gpio_init_struct);         /* ³õÊ¼»¯PB3 */
+    gpio_init_struct.Mode = GPIO_MODE_AF_PP;                      /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+    gpio_init_struct.Pull = GPIO_PULLUP;                          /* ï¿½ï¿½ï¿½ï¿½ */
+    gpio_init_struct.Speed = GPIO_SPEED_HIGH;                     /* ï¿½ï¿½ï¿½ï¿½ */
+    gpio_init_struct.Alternate = GPIO_AF12_UART7;                 /* ï¿½ï¿½ï¿½ï¿½ÎªUSART7 */
+    HAL_GPIO_Init(RS485_RX_GPIO_PORT, &gpio_init_struct);         /* ï¿½ï¿½Ê¼ï¿½ï¿½PB3 */
 
-    /* USART ³õÊ¼»¯ÉèÖÃ */
+    /* USART ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     g_rs458_handle.Instance = RS485_UX;                  /* USART7 */
-    g_rs458_handle.Init.BaudRate = bound;                /* ²¨ÌØÂÊ */
-    g_rs458_handle.Init.WordLength = UART_WORDLENGTH_8B; /* ×Ö³¤Îª8Î»Êý¾Ý¸ñÊ½ */
-    g_rs458_handle.Init.StopBits = UART_STOPBITS_1;      /* Ò»¸öÍ£Ö¹Î» */
-    g_rs458_handle.Init.Parity = UART_PARITY_NONE;       /* ÎÞÆæÅ¼Ð£ÑéÎ» */
-    g_rs458_handle.Init.HwFlowCtl = UART_HWCONTROL_NONE; /* ÎÞÓ²¼þÁ÷¿Ø */
-    g_rs458_handle.Init.Mode = UART_MODE_TX_RX;          /* ÊÕ·¢Ä£Ê½ */
-    HAL_UART_Init(&g_rs458_handle);                      /* HAL_UART_Init()»áÊ¹ÄÜUSART7 */
+    g_rs458_handle.Init.BaudRate = bound;                /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+    g_rs458_handle.Init.WordLength = UART_WORDLENGTH_8B; /* ï¿½Ö³ï¿½Îª8Î»ï¿½ï¿½ï¿½Ý¸ï¿½Ê½ */
+    g_rs458_handle.Init.StopBits = UART_STOPBITS_1;      /* Ò»ï¿½ï¿½Í£Ö¹Î» */
+    g_rs458_handle.Init.Parity = UART_PARITY_NONE;       /* ï¿½ï¿½ï¿½ï¿½Å¼Ð£ï¿½ï¿½Î» */
+    g_rs458_handle.Init.HwFlowCtl = UART_HWCONTROL_NONE; /* ï¿½ï¿½Ó²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+    g_rs458_handle.Init.Mode = UART_MODE_TX_RX;          /* ï¿½Õ·ï¿½Ä£Ê½ */
+    HAL_UART_Init(&g_rs458_handle);                      /* HAL_UART_Init()ï¿½ï¿½Ê¹ï¿½ï¿½USART7 */
 
     __HAL_UART_DISABLE_IT(&g_rs458_handle, UART_IT_TC);
 
 #if EN_USART7_RX
-    __HAL_UART_ENABLE_IT(&g_rs458_handle, UART_IT_RXNE);  /* ¿ªÆô½ÓÊÕÖÐ¶Ï */
-    HAL_NVIC_EnableIRQ(RS485_UX_IRQn);                    /* Ê¹ÄÜUSART7ÖÐ¶Ï */
-    HAL_NVIC_SetPriority(RS485_UX_IRQn, 3, 3);            /* ÇÀÕ¼ÓÅÏÈ¼¶3£¬×ÓÓÅÏÈ¼¶3 */
+    __HAL_UART_ENABLE_IT(&g_rs458_handle, UART_IT_RXNE);  /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ */
+    HAL_NVIC_EnableIRQ(RS485_UX_IRQn);                    /* Ê¹ï¿½ï¿½USART7ï¿½Ð¶ï¿½ */
+    HAL_NVIC_SetPriority(RS485_UX_IRQn, 3, 3);            /* ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½È¼ï¿½3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¼ï¿½3 */
 #endif
 
-    rs485_tx_set(0);                                      /* ÉèÖÃÎª½ÓÊÕÄ£Ê½ */
+    rs485_tx_set(0);                                      /* ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ä£Ê½ */
 }
 
 /**
- * @brief       RS485·¢ËÍlen¸ö×Ö½Ú
- * @param       buf:·¢ËÍÇøÊ×µØÖ·
- * @param       len:·¢ËÍµÄ×Ö½ÚÊý(ÎªÁËºÍ±¾´úÂëµÄ½ÓÊÕÆ¥Åä,ÕâÀï½¨Òé²»Òª³¬¹ý64¸ö×Ö½Ú)
- * @retval      ÎÞ
+ * @brief       RS485ï¿½ï¿½ï¿½ï¿½lenï¿½ï¿½ï¿½Ö½ï¿½
+ * @param       buf:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×µï¿½Ö·
+ * @param       len:ï¿½ï¿½ï¿½Íµï¿½ï¿½Ö½ï¿½ï¿½ï¿½(Îªï¿½ËºÍ±ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½,ï¿½ï¿½ï¿½ï½¨ï¿½é²»Òªï¿½ï¿½ï¿½ï¿½64ï¿½ï¿½ï¿½Ö½ï¿½)
+ * @retval      ï¿½ï¿½
  */
 void rs485_send_data(uint8_t *buf, uint8_t len)
 {
-    rs485_tx_set(1);        /* ÉèÖÃÎª·¢ËÍÄ£Ê½ */
-    HAL_UART_Transmit(&g_rs458_handle, buf, len, 1000);  /* ´®¿Ú2·¢ËÍÊý¾Ý */
+    rs485_tx_set(1);        /* ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ä£Ê½ */
+    HAL_UART_Transmit(&g_rs458_handle, buf, len, 1000);  /* ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     g_RS485_rx_cnt = 0;
-    rs485_tx_set(0);        /* ÉèÖÃÎª½ÓÊÕÄ£Ê½ */
+    rs485_tx_set(0);        /* ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ä£Ê½ */
 }
 
 /**
- * @brief       RS485²éÑ¯½ÓÊÕµ½µÄÊý¾Ý
- * @param       buf     : ½ÓÊÕ»º³åÇøÊ×µØÖ·
- * @param       len     : ½ÓÊÕµ½µÄÊý¾Ý³¤¶È
- *   @arg               0   , ±íÊ¾Ã»ÓÐ½ÓÊÕµ½ÈÎºÎÊý¾Ý
- *   @arg               ÆäËû, ±íÊ¾½ÓÊÕµ½µÄÊý¾Ý³¤¶È
- * @retval      ÎÞ
+ * @brief       RS485ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * @param       buf     : ï¿½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×µï¿½Ö·
+ * @param       len     : ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý³ï¿½ï¿½ï¿½
+ *   @arg               0   , ï¿½ï¿½Ê¾Ã»ï¿½Ð½ï¿½ï¿½Õµï¿½ï¿½Îºï¿½ï¿½ï¿½ï¿½ï¿½
+ *   @arg               ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý³ï¿½ï¿½ï¿½
+ * @retval      ï¿½ï¿½
  */
 void rs485_receive_data(uint8_t *buf, uint8_t *len)
 {
     uint8_t rxlen = g_RS485_rx_cnt;
     uint8_t i = 0;
-    *len = 0;         /* Ä¬ÈÏÎª0 */
-    delay_ms(10);     /* µÈ´ý10ms,Á¬Ðø³¬¹ý10msÃ»ÓÐ½ÓÊÕµ½Ò»¸öÊý¾Ý,ÔòÈÏÎª½ÓÊÕ½áÊø */
+    *len = 0;         /* Ä¬ï¿½ï¿½Îª0 */
+    delay_ms(10);     /* ï¿½È´ï¿½10ms,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½10msÃ»ï¿½Ð½ï¿½ï¿½Õµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½Õ½ï¿½ï¿½ï¿½ */
 
-    if (rxlen == g_RS485_rx_cnt && rxlen) /* ½ÓÊÕµ½ÁËÊý¾Ý,ÇÒ½ÓÊÕÍê³ÉÁË */
+    if (rxlen == g_RS485_rx_cnt && rxlen) /* ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½Ò½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     {
         for (i = 0;i < rxlen;i++)
         {
             buf[i] = g_RS485_rx_buf[i];
         }
 
-        *len = g_RS485_rx_cnt;    /* ¼ÇÂ¼±¾´ÎÊý¾Ý³¤¶È */
-        g_RS485_rx_cnt = 0;       /* ÇåÁã */
+        *len = g_RS485_rx_cnt;    /* ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý³ï¿½ï¿½ï¿½ */
+        g_RS485_rx_cnt = 0;       /* ï¿½ï¿½ï¿½ï¿½ */
     }
 }
 
 
 /**
- * @brief       RS485Ä£Ê½¿ØÖÆ.
- * @param       en:0,½ÓÊÕ;1,·¢ËÍ.
- * @retval      ÎÞ
+ * @brief       RS485Ä£Ê½ï¿½ï¿½ï¿½ï¿½.
+ * @param       en:0,ï¿½ï¿½ï¿½ï¿½;1,ï¿½ï¿½ï¿½ï¿½.
+ * @retval      ï¿½ï¿½
  */
 void rs485_tx_set(uint8_t en)
 {
   if(!en)
 	{
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);  /* Ä¬ÈÏ½ÓÊÕ*/  
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);  /* Ä¬ï¿½Ï½ï¿½ï¿½ï¿½*/  
 	}else
 	{
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);  /* Ä¬ÈÏ½ÓÊÕ*/  
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);  /* Ä¬ï¿½Ï½ï¿½ï¿½ï¿½*/  
 	} 
 }

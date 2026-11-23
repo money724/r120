@@ -4,7 +4,7 @@
  * @author   
  * @version  V1.0
  * @date     2026-11-16
- * @brief    À×´ïÒºÎ»¼Æ-HAL¿â°æ±¾ 
+ * @brief    ï¿½×´ï¿½ÒºÎ»ï¿½ï¿½-HALï¿½ï¿½æ±¾ 
  * @license  
  */
  
@@ -24,26 +24,26 @@ static uint8_t val;
 
 int main(void)
 {
-    HAL_Init();                                 /* ³õÊ¼»¯HAL¿â */
-    sys_stm32_clock_init(432, 25, 2, 9);        /* ÉèÖÃÊ±ÖÓ, 216Mhz */
-    delay_init(216);                            /* ÑÓÊ±³õÊ¼»¯ */
-    led_init();                                 /* LED³õÊ¼»¯ */
-    rs485_init(115200);                         /* RS485³õÊ¼»¯ */
-	  TMP125_Init();                              /* TMP125ÎÂ¶È³õÊ¼»¯ */
-	  iic_init();                                 /* 24LC32A´æ´¢ IIC³õÊ¼»¯ */
-	  ADF4159_Init();                             /* ADF4159³õÊ¼»¯ */
-	  ADF4159_Config();                           /* ADF4159ÅäÖÃ */
-	  OLED_Init();			                          /* ³õÊ¼»¯ÆÁOLED */ 
+    HAL_Init();                                 /* ï¿½ï¿½Ê¼ï¿½ï¿½HALï¿½ï¿½ */
+    sys_stm32_clock_init(432, 25, 2, 9);        /* ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½, 216Mhz */
+    delay_init(216);                            /* ï¿½ï¿½Ê±ï¿½ï¿½Ê¼ï¿½ï¿½ */
+    led_init();                                 /* LEDï¿½ï¿½Ê¼ï¿½ï¿½ */
+    rs485_init(115200);                         /* RS485ï¿½ï¿½Ê¼ï¿½ï¿½ */
+	  TMP125_Init();                              /* TMP125ï¿½Â¶È³ï¿½Ê¼ï¿½ï¿½ */
+	  iic_init();                                 /* 24LC32Aï¿½æ´¢ IICï¿½ï¿½Ê¼ï¿½ï¿½ */
+	  ADF4159_Init();                             /* ADF4159ï¿½ï¿½Ê¼ï¿½ï¿½ */
+	  ADF4159_Config();                           /* ADF4159ï¿½ï¿½ï¿½ï¿½ */
+	  OLED_Init();			                          /* ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½OLED */ 
 	
     while(1)
     {  
-			LED(1);                            /* PA11µçÆ½À­¸ßLED0Ãð */
+			LED(1);                            /* PA11ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½LED0ï¿½ï¿½ */
 			delay_ms(500);
-			LED(0);                            /* PA11µçÆ½À­µÍLED0ÁÁ */
+			LED(0);                            /* PA11ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½LED0ï¿½ï¿½ */
 			delay_ms(500);
 		
 			temp = TMP125_ReadTemperature();
-			/* µ¥×Ö½ÚÐ´²âÊÔ£¬µØÖ·0x10 */
+			/* ï¿½ï¿½ï¿½Ö½ï¿½Ð´ï¿½ï¿½ï¿½Ô£ï¿½ï¿½ï¿½Ö·0x10 */
 			//EEPROM_WriteByte(0x10, 0x66);
 			val=EEPRO_ReadByte(0x10);
 		

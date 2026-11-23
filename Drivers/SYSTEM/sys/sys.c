@@ -1,32 +1,32 @@
 /**
  ****************************************************************************************************
  * @file        sys.c
- * @author      ÕýµãÔ­×ÓÍÅ¶Ó(ALIENTEK)
+ * @author      ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½Å¶ï¿½(ALIENTEK)
  * @version     V1.0
  * @date        2022-07-19
- * @brief       ÏµÍ³³õÊ¼»¯´úÂë(°üÀ¨Ê±ÖÓÅäÖÃ/ÖÐ¶Ï¹ÜÀí/GPIOÉèÖÃµÈ)
- * @license     Copyright (c) 2020-2032, ¹ãÖÝÊÐÐÇÒíµç×Ó¿Æ¼¼ÓÐÏÞ¹«Ë¾
+ * @brief       ÏµÍ³ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½Ð¶Ï¹ï¿½ï¿½ï¿½/GPIOï¿½ï¿½ï¿½Ãµï¿½)
+ * @license     Copyright (c) 2020-2032, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿Æ¼ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾
  ****************************************************************************************************
  * @attention
  *
- * ÊµÑéÆ½Ì¨:ÕýµãÔ­×Ó °¢²¨ÂÞ F767¿ª·¢°å
- * ÔÚÏßÊÓÆµ:www.yuanzige.com
- * ¼¼ÊõÂÛÌ³:www.openedv.com
- * ¹«Ë¾ÍøÖ·:www.alientek.com
- * ¹ºÂòµØÖ·:openedv.taobao.com
+ * Êµï¿½ï¿½Æ½Ì¨:ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ F767ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµ:www.yuanzige.com
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì³:www.openedv.com
+ * ï¿½ï¿½Ë¾ï¿½ï¿½Ö·:www.alientek.com
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Ö·:openedv.taobao.com
  *
- * ÐÞ¸ÄËµÃ÷
+ * ï¿½Þ¸ï¿½Ëµï¿½ï¿½
  * V1.0 20220719
- * µÚÒ»´Î·¢²¼
+ * ï¿½ï¿½Ò»ï¿½Î·ï¿½ï¿½ï¿½
  ****************************************************************************************************
  */
 
 #include "./SYSTEM/sys/sys.h"
 
 /**
- * @brief       Ö´ÐÐ: WFIÖ¸Áî(Ö´ÐÐÍê¸ÃÖ¸Áî½øÈëµÍ¹¦ºÄ×´Ì¬, µÈ´ýÖÐ¶Ï»½ÐÑ)
- * @param       ÎÞ
- * @retval      ÎÞ
+ * @brief       Ö´ï¿½ï¿½: WFIÖ¸ï¿½ï¿½(Ö´ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½Í¹ï¿½ï¿½ï¿½×´Ì¬, ï¿½È´ï¿½ï¿½Ð¶Ï»ï¿½ï¿½ï¿½)
+ * @param       ï¿½ï¿½
+ * @retval      ï¿½ï¿½
  */
 void sys_wfi_set(void)
 {
@@ -34,9 +34,9 @@ void sys_wfi_set(void)
 }
 
 /**
- * @brief       ¹Ø±ÕËùÓÐÖÐ¶Ï(µ«ÊÇ²»°üÀ¨faultºÍNMIÖÐ¶Ï)
- * @param       ÎÞ
- * @retval      ÎÞ
+ * @brief       ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½(ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½faultï¿½ï¿½NMIï¿½Ð¶ï¿½)
+ * @param       ï¿½ï¿½
+ * @retval      ï¿½ï¿½
  */
 void sys_intx_disable(void)
 {
@@ -44,9 +44,9 @@ void sys_intx_disable(void)
 }
 
 /**
- * @brief       ¿ªÆôËùÓÐÖÐ¶Ï
- * @param       ÎÞ
- * @retval      ÎÞ
+ * @brief       ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
+ * @param       ï¿½ï¿½
+ * @retval      ï¿½ï¿½
  */
 void sys_intx_enable(void)
 {
@@ -54,32 +54,32 @@ void sys_intx_enable(void)
 }
 
 /**
- * @brief       ÉèÖÃÕ»¶¥µØÖ·
- * @note        ×ó²àµÄºìX, ÊôÓÚMDKÎó±¨, Êµ¼ÊÊÇÃ»ÎÊÌâµÄ
- * @param       addr: Õ»¶¥µØÖ·
- * @retval      ÎÞ
+ * @brief       ï¿½ï¿½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½Ö·
+ * @note        ï¿½ï¿½ï¿½Äºï¿½X, ï¿½ï¿½ï¿½ï¿½MDKï¿½ï¿½, Êµï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
+ * @param       addr: Õ»ï¿½ï¿½ï¿½ï¿½Ö·
+ * @retval      ï¿½ï¿½
  */
 void sys_msr_msp(uint32_t addr)
 {
-    __set_MSP(addr);    /* ÉèÖÃÕ»¶¥µØÖ· */
+    __set_MSP(addr);    /* ï¿½ï¿½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½Ö· */
 }
 
 /**
- * @brief       Ê¹ÄÜSTM32F7µÄL1-Cache, Í¬Ê±¿ªÆôD cacheµÄÇ¿ÖÆÍ¸Ð´
- * @param       ÎÞ
- * @retval      ÎÞ
+ * @brief       Ê¹ï¿½ï¿½STM32F7ï¿½ï¿½L1-Cache, Í¬Ê±ï¿½ï¿½ï¿½ï¿½D cacheï¿½ï¿½Ç¿ï¿½ï¿½Í¸Ð´
+ * @param       ï¿½ï¿½
+ * @retval      ï¿½ï¿½
  */
 void sys_cache_enable(void)
 {
-    SCB_EnableICache(); /* Ê¹ÄÜI-Cache,º¯ÊýÔÚcore_cm7.hÀïÃæ¶¨Òå */
-    SCB_EnableDCache(); /* Ê¹ÄÜD-Cache,º¯ÊýÔÚcore_cm7.hÀïÃæ¶¨Òå */
-    SCB->CACR |= 1 << 2;/* Ç¿ÖÆD-CacheÍ¸Ð´,Èç²»¿ªÆôÍ¸Ð´,Êµ¼ÊÊ¹ÓÃÖÐ¿ÉÄÜÓöµ½¸÷ÖÖÎÊÌâ */
+    SCB_EnableICache(); /* Ê¹ï¿½ï¿½I-Cache,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½core_cm7.hï¿½ï¿½ï¿½æ¶¨ï¿½ï¿½ */
+    SCB_EnableDCache(); /* Ê¹ï¿½ï¿½D-Cache,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½core_cm7.hï¿½ï¿½ï¿½æ¶¨ï¿½ï¿½ */
+    SCB->CACR |= 1 << 2;/* Ç¿ï¿½ï¿½D-CacheÍ¸Ð´,ï¿½ç²»ï¿½ï¿½ï¿½ï¿½Í¸Ð´,Êµï¿½ï¿½Ê¹ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 }
 
 /**
- * @brief       ÅÐ¶ÏI_CacheÊÇ·ñ´ò¿ª
- * @param       ÎÞ
- * @retval      ·µ»ØÖµ:0 ¹Ø±Õ£¬1 ´ò¿ª
+ * @brief       ï¿½Ð¶ï¿½I_Cacheï¿½Ç·ï¿½ï¿½
+ * @param       ï¿½ï¿½
+ * @retval      ï¿½ï¿½ï¿½ï¿½Öµ:0 ï¿½Ø±Õ£ï¿½1 ï¿½ï¿½
  */
 uint8_t get_icache_sta(void)
 {
@@ -89,9 +89,9 @@ uint8_t get_icache_sta(void)
 }
 
 /**
- * @brief       ÅÐ¶ÏD_CacheÊÇ·ñ´ò¿ª
- * @param       ÎÞ
- * @retval      ·µ»ØÖµ:0 ¹Ø±Õ£¬1 ´ò¿ª
+ * @brief       ï¿½Ð¶ï¿½D_Cacheï¿½Ç·ï¿½ï¿½
+ * @param       ï¿½ï¿½
+ * @retval      ï¿½ï¿½ï¿½ï¿½Öµ:0 ï¿½Ø±Õ£ï¿½1 ï¿½ï¿½
  */
 uint8_t get_dcache_sta(void)
 {
@@ -101,33 +101,33 @@ uint8_t get_dcache_sta(void)
 }
 
 /**
- * @brief       Ê±ÖÓÉèÖÃº¯Êý
- * @param       plln: PLL1±¶ÆµÏµÊý(PLL±¶Æµ), È¡Öµ·¶Î§: 192~432.
- * @param       pllm: PLL1Ô¤·ÖÆµÏµÊý(½øPLLÖ®Ç°µÄ·ÖÆµ), È¡Öµ·¶Î§: 2~63.
- * @param       pllp: PLL1µÄp·ÖÆµÏµÊý(PLLÖ®ºóµÄ·ÖÆµ), ·ÖÆµºó×÷ÎªÏµÍ³Ê±ÖÓ, È¡Öµ·¶Î§: 2,4,6,8.(½öÏÞÕâ4¸öÖµ!)
- * @param       pllq: PLL1µÄq·ÖÆµÏµÊý(PLLÖ®ºóµÄ·ÖÆµ), È¡Öµ·¶Î§: 2~15.
+ * @brief       Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½
+ * @param       plln: PLL1ï¿½ï¿½ÆµÏµï¿½ï¿½(PLLï¿½ï¿½Æµ), È¡Öµï¿½ï¿½Î§: 192~432.
+ * @param       pllm: PLL1Ô¤ï¿½ï¿½ÆµÏµï¿½ï¿½(ï¿½ï¿½PLLÖ®Ç°ï¿½Ä·ï¿½Æµ), È¡Öµï¿½ï¿½Î§: 2~63.
+ * @param       pllp: PLL1ï¿½ï¿½pï¿½ï¿½ÆµÏµï¿½ï¿½(PLLÖ®ï¿½ï¿½Ä·ï¿½Æµ), ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ÎªÏµÍ³Ê±ï¿½ï¿½, È¡Öµï¿½ï¿½Î§: 2,4,6,8.(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½4ï¿½ï¿½Öµ!)
+ * @param       pllq: PLL1ï¿½ï¿½qï¿½ï¿½ÆµÏµï¿½ï¿½(PLLÖ®ï¿½ï¿½Ä·ï¿½Æµ), È¡Öµï¿½ï¿½Î§: 2~15.
  * @note
  *
- *              Fvco: VCOÆµÂÊ
- *              Fsys: ÏµÍ³Ê±ÖÓÆµÂÊ, Ò²ÊÇPLL1µÄp·ÖÆµÊä³öÊ±ÖÓÆµÂÊ
- *              Fq:   PLL1µÄq·ÖÆµÊä³öÊ±ÖÓÆµÂÊ
- *              Fs:   PLLÊäÈëÊ±ÖÓÆµÂÊ, ¿ÉÒÔÊÇHSI, CSI, HSEµÈ.
+ *              Fvco: VCOÆµï¿½ï¿½
+ *              Fsys: ÏµÍ³Ê±ï¿½ï¿½Æµï¿½ï¿½, Ò²ï¿½ï¿½PLL1ï¿½ï¿½pï¿½ï¿½Æµï¿½ï¿½ï¿½Ê±ï¿½ï¿½Æµï¿½ï¿½
+ *              Fq:   PLL1ï¿½ï¿½qï¿½ï¿½Æµï¿½ï¿½ï¿½Ê±ï¿½ï¿½Æµï¿½ï¿½
+ *              Fs:   PLLï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Æµï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HSI, CSI, HSEï¿½ï¿½.
  *              Fvco = Fs * (plln / pllm);
  *              Fsys = Fvco / pllp = Fs * (plln / (pllm * pllp));
  *              Fq   = Fvco / pllq = Fs * (plln / (pllm * pllq));
  *
- *              Íâ²¿¾§ÕñÎª25MµÄÊ±ºò, ÍÆ¼öÖµ: plln = 432, pllm = 25, pllp = 2, pllq = 9.
- *              µÃµ½:Fvco = 25 * ( 432 / 25) = 432Mhz
+ *              ï¿½â²¿ï¿½ï¿½ï¿½ï¿½Îª25Mï¿½ï¿½Ê±ï¿½ï¿½, ï¿½Æ¼ï¿½Öµ: plln = 432, pllm = 25, pllp = 2, pllq = 9.
+ *              ï¿½Ãµï¿½:Fvco = 25 * ( 432 / 25) = 432Mhz
  *                   Fsys = pll1_p_ck = 432 / 2 = 216Mhz
  *                   Fq   = pll1_q_ck = 432 / 9 = 48Mhz
  *
- *              F767Ä¬ÈÏÐèÒªÅäÖÃµÄÆµÂÊÈçÏÂ:
- *              CPUÆµÂÊ(rcc_c_ck) = sys_d1cpre_ck = 216Mhz
+ *              F767Ä¬ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Ãµï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:
+ *              CPUÆµï¿½ï¿½(rcc_c_ck) = sys_d1cpre_ck = 216Mhz
  *              AHB1/2/3(rcc_hclk1/2/3) = 216Mhz
  *              APB1(rcc_pclk1) = pll_p_ck / 4 = 54Mhz
  *              APB2(rcc_pclk2) = pll_p_ck / 2 = 108Mhz
  *
- * @retval      ´íÎó´úÂë: 0, ³É¹¦; 1, ´íÎó;
+ * @retval      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: 0, ï¿½É¹ï¿½; 1, ï¿½ï¿½ï¿½ï¿½;
  */
 uint8_t sys_stm32_clock_init(uint32_t plln, uint32_t pllm, uint32_t pllp, uint32_t pllq)
 {
@@ -135,16 +135,16 @@ uint8_t sys_stm32_clock_init(uint32_t plln, uint32_t pllm, uint32_t pllp, uint32
     RCC_ClkInitTypeDef rcc_clk_init_handle;
     RCC_OscInitTypeDef rcc_osc_init_handle;
   
-    __HAL_RCC_PWR_CLK_ENABLE();                                            /* Ê¹ÄÜPWRÊ±ÖÓ */
+    __HAL_RCC_PWR_CLK_ENABLE();                                            /* Ê¹ï¿½ï¿½PWRÊ±ï¿½ï¿½ */
 
-    /* ÏÂÃæÕâ¸öÉèÖÃÓÃÀ´ÉèÖÃµ÷Ñ¹Æ÷Êä³öµçÑ¹¼¶±ð£¬ÒÔ±ãÔÚÆ÷¼þÎ´ÒÔ×î´óÆµÂÊ¹¤×÷Ê±Ê¹ÐÔÄÜÓë¹¦ºÄÊµÏÖÆ½ºâ */
-    __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);         /* VOS = 1, Scale1, 1.2VÄÚºËµçÑ¹,FLASH·ÃÎÊ¿ÉÒÔµÃµ½×î¸ßÐÔÄÜ */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½Ê¹ï¿½ï¿½ï¿½Ê±Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ë¹¦ï¿½ï¿½Êµï¿½ï¿½Æ½ï¿½ï¿½ */
+    __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);         /* VOS = 1, Scale1, 1.2Vï¿½ÚºËµï¿½Ñ¹,FLASHï¿½ï¿½ï¿½Ê¿ï¿½ï¿½ÔµÃµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 
-    /* Ê¹ÄÜHSE£¬²¢Ñ¡ÔñHSE×÷ÎªPLLÊ±ÖÓÔ´£¬ÅäÖÃPLL1£¬¿ªÆôUSBÊ±ÖÓ */
-    rcc_osc_init_handle.OscillatorType = RCC_OSCILLATORTYPE_HSE;           /* Ê±ÖÓÔ´ÎªHSE */
-    rcc_osc_init_handle.HSEState = RCC_HSE_ON;                             /* ´ò¿ªHSE */
-    rcc_osc_init_handle.PLL.PLLState = RCC_PLL_ON;                         /* ´ò¿ªPLL */
-    rcc_osc_init_handle.PLL.PLLSource = RCC_PLLSOURCE_HSE;                 /* PLLÊ±ÖÓÔ´Ñ¡ÔñHSE */
+    /* Ê¹ï¿½ï¿½HSEï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½HSEï¿½ï¿½ÎªPLLÊ±ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PLL1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½USBÊ±ï¿½ï¿½ */
+    rcc_osc_init_handle.OscillatorType = RCC_OSCILLATORTYPE_HSE;           /* Ê±ï¿½ï¿½Ô´ÎªHSE */
+    rcc_osc_init_handle.HSEState = RCC_HSE_ON;                             /* ï¿½ï¿½HSE */
+    rcc_osc_init_handle.PLL.PLLState = RCC_PLL_ON;                         /* ï¿½ï¿½PLL */
+    rcc_osc_init_handle.PLL.PLLSource = RCC_PLLSOURCE_HSE;                 /* PLLÊ±ï¿½ï¿½Ô´Ñ¡ï¿½ï¿½HSE */
     rcc_osc_init_handle.PLL.PLLN = plln;
     rcc_osc_init_handle.PLL.PLLM = pllm;
     rcc_osc_init_handle.PLL.PLLP = pllp;
@@ -155,18 +155,18 @@ uint8_t sys_stm32_clock_init(uint32_t plln, uint32_t pllm, uint32_t pllp, uint32
         return 1;
     }
     
-    ret = HAL_PWREx_EnableOverDrive();   /* ¿ªÆôOver-Driver¹¦ÄÜ */
+    ret = HAL_PWREx_EnableOverDrive();   /* ï¿½ï¿½ï¿½ï¿½Over-Driverï¿½ï¿½ï¿½ï¿½ */
     if(ret != HAL_OK)
     {
         return 1;
     }
 
     /*
-     *  Ñ¡ÔñPLLµÄÊä³ö×÷ÎªÏµÍ³Ê±ÖÓ
-     *  ÅäÖÃRCC_CLOCKTYPE_SYSCLKÏµÍ³Ê±ÖÓ,216M
-     *  ÅäÖÃRCC_CLOCKTYPE_HCLK Ê±ÖÓ,216hz,¶ÔÓ¦AHB1£¬AHB2£¬AHB3ºÍAHB4×ÜÏß
-     *  ÅäÖÃRCC_CLOCKTYPE_PCLK1Ê±ÖÓ,54Mhz,¶ÔÓ¦APB1×ÜÏß
-     *  ÅäÖÃRCC_CLOCKTYPE_PCLK2Ê±ÖÓ,108Mhz,¶ÔÓ¦APB2×ÜÏß
+     *  Ñ¡ï¿½ï¿½PLLï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªÏµÍ³Ê±ï¿½ï¿½
+     *  ï¿½ï¿½ï¿½ï¿½RCC_CLOCKTYPE_SYSCLKÏµÍ³Ê±ï¿½ï¿½,216M
+     *  ï¿½ï¿½ï¿½ï¿½RCC_CLOCKTYPE_HCLK Ê±ï¿½ï¿½,216hz,ï¿½ï¿½Ó¦AHB1ï¿½ï¿½AHB2ï¿½ï¿½AHB3ï¿½ï¿½AHB4ï¿½ï¿½ï¿½ï¿½
+     *  ï¿½ï¿½ï¿½ï¿½RCC_CLOCKTYPE_PCLK1Ê±ï¿½ï¿½,54Mhz,ï¿½ï¿½Ó¦APB1ï¿½ï¿½ï¿½ï¿½
+     *  ï¿½ï¿½ï¿½ï¿½RCC_CLOCKTYPE_PCLK2Ê±ï¿½ï¿½,108Mhz,ï¿½ï¿½Ó¦APB2ï¿½ï¿½ï¿½ï¿½
      */
 
     rcc_clk_init_handle.ClockType = (RCC_CLOCKTYPE_SYSCLK \
@@ -174,14 +174,14 @@ uint8_t sys_stm32_clock_init(uint32_t plln, uint32_t pllm, uint32_t pllp, uint32
                                     | RCC_CLOCKTYPE_PCLK1 \
                                     | RCC_CLOCKTYPE_PCLK2);
 
-    rcc_clk_init_handle.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;            /* ÉèÖÃÏµÍ³Ê±ÖÓÊ±ÖÓÔ´ÎªPLL */
-    rcc_clk_init_handle.AHBCLKDivider = RCC_SYSCLK_DIV1;                   /* AHB·ÖÆµÏµÊýÎª1 */
-    rcc_clk_init_handle.APB1CLKDivider = RCC_HCLK_DIV4;                    /* APB1·ÖÆµÏµÊýÎª4 */
-    rcc_clk_init_handle.APB2CLKDivider = RCC_HCLK_DIV2;                    /* APB2·ÖÆµÏµÊýÎª2 */
-    ret = HAL_RCC_ClockConfig(&rcc_clk_init_handle, FLASH_LATENCY_7);      /* Í¬Ê±ÉèÖÃFLASHÑÓÊ±ÖÜÆÚÎª7WS */
+    rcc_clk_init_handle.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;            /* ï¿½ï¿½ï¿½ï¿½ÏµÍ³Ê±ï¿½ï¿½Ê±ï¿½ï¿½Ô´ÎªPLL */
+    rcc_clk_init_handle.AHBCLKDivider = RCC_SYSCLK_DIV1;                   /* AHBï¿½ï¿½ÆµÏµï¿½ï¿½Îª1 */
+    rcc_clk_init_handle.APB1CLKDivider = RCC_HCLK_DIV4;                    /* APB1ï¿½ï¿½ÆµÏµï¿½ï¿½Îª4 */
+    rcc_clk_init_handle.APB2CLKDivider = RCC_HCLK_DIV2;                    /* APB2ï¿½ï¿½ÆµÏµï¿½ï¿½Îª2 */
+    ret = HAL_RCC_ClockConfig(&rcc_clk_init_handle, FLASH_LATENCY_7);      /* Í¬Ê±ï¿½ï¿½ï¿½ï¿½FLASHï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Îª7WS */
     if(ret != HAL_OK)
     {
-        return 1;                                                          /* Ê±ÖÓ³õÊ¼»¯Ê§°Ü */
+        return 1;                                                          /* Ê±ï¿½Ó³ï¿½Ê¼ï¿½ï¿½Ê§ï¿½ï¿½ */
     }
     return 0;
 }
@@ -190,10 +190,10 @@ uint8_t sys_stm32_clock_init(uint32_t plln, uint32_t pllm, uint32_t pllp, uint32
 #ifdef  USE_FULL_ASSERT
 
 /**
- * @brief       µ±±àÒëÌáÊ¾³ö´íµÄÊ±ºò´Ëº¯ÊýÓÃÀ´±¨¸æ´íÎóµÄÎÄ¼þºÍËùÔÚÐÐ
- * @param       file£ºÖ¸ÏòÔ´ÎÄ¼þ
- *              line£ºÖ¸ÏòÔÚÎÄ¼þÖÐµÄÐÐÊý
- * @retval      ÎÞ
+ * @brief       ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * @param       fileï¿½ï¿½Ö¸ï¿½ï¿½Ô´ï¿½Ä¼ï¿½
+ *              lineï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½
+ * @retval      ï¿½ï¿½
  */
 void assert_failed(uint8_t* file, uint32_t line)
 { 

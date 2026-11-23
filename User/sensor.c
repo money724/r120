@@ -2,19 +2,19 @@
 #include "sensor.h"
 
 /**
- * @brief       ³õ0Ê¼»¯LEDÏà¹ØIO¿Ú, ²¢Ê¹ÄÜÊ±ÖÓ
- * @param       ÎÞ
- * @retval      ÎÞ
+ * @brief       ï¿½ï¿½0Ê¼ï¿½ï¿½LEDï¿½ï¿½ï¿½IOï¿½ï¿½, ï¿½ï¿½Ê¹ï¿½ï¿½Ê±ï¿½ï¿½
+ * @param       ï¿½ï¿½
+ * @retval      ï¿½ï¿½
  */
 void led_init(void)
 {
     GPIO_InitTypeDef gpio_init_struct;
 
-    LED_GPIO_CLK_ENABLE();                                    /* GPIOA Ê±ÖÓÊ¹ÄÜ */
+    LED_GPIO_CLK_ENABLE();                                    /* GPIOA Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
     
-    gpio_init_struct.Pin = LED_GPIO_PIN;                         /* LED0Òý½Å */
-    gpio_init_struct.Mode = GPIO_MODE_OUTPUT_PP;               /* ÍÆÍìÊä³ö */
-    gpio_init_struct.Pull = GPIO_PULLUP;                       /* ÉÏÀ­ */
-    gpio_init_struct.Speed = GPIO_SPEED_FREQ_HIGH;             /* ¸ßËÙ */
-    HAL_GPIO_Init(LED_GPIO_PORT, &gpio_init_struct);          /* ³õÊ¼»¯LED0Òý½Å */
+    gpio_init_struct.Pin = LED_GPIO_PIN;                         /* LED0ï¿½ï¿½ï¿½ï¿½ */
+    gpio_init_struct.Mode = GPIO_MODE_OUTPUT_PP;               /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+    gpio_init_struct.Pull = GPIO_PULLUP;                       /* ï¿½ï¿½ï¿½ï¿½ */
+    gpio_init_struct.Speed = GPIO_SPEED_FREQ_HIGH;             /* ï¿½ï¿½ï¿½ï¿½ */
+    HAL_GPIO_Init(LED_GPIO_PORT, &gpio_init_struct);          /* ï¿½ï¿½Ê¼ï¿½ï¿½LED0ï¿½ï¿½ï¿½ï¿½ */
 }

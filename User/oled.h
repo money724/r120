@@ -13,15 +13,15 @@
 #define	Brightness	0xFF 
 #define X_WIDTH 	128
 #define Y_WIDTH 	64	    						  
-//-----------------OLED IIC¶Ë¿Ú¶¨Òå----------------  				
+//-----------------OLED IICï¿½Ë¿Ú¶ï¿½ï¿½ï¿½----------------  				
 
 #define OLED_SCLK_PORT   GPIOC
 #define OLED_SCLK_PIN    GPIO_PIN_7
 #define OLED_SDIN_PORT   GPIOA
 #define OLED_SDIN_PIN    GPIO_PIN_9
 
-#define OLED_SCLK_GPIO_CLK_ENABLE()       do{ __HAL_RCC_GPIOC_CLK_ENABLE(); }while(0)   /* PC¿ÚÊ±ÖÓÊ¹ÄÜ */
-#define OLED_SDIN_GPIO_CLK_ENABLE()       do{ __HAL_RCC_GPIOA_CLK_ENABLE(); }while(0)   /* PA¿ÚÊ±ÖÓÊ¹ÄÜ */
+#define OLED_SCLK_GPIO_CLK_ENABLE()       do{ __HAL_RCC_GPIOC_CLK_ENABLE(); }while(0)   /* PCï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
+#define OLED_SDIN_GPIO_CLK_ENABLE()       do{ __HAL_RCC_GPIOA_CLK_ENABLE(); }while(0)   /* PAï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½ */
 
 #define OLED_SCLK_Clr() HAL_GPIO_WritePin(OLED_SCLK_PORT, OLED_SCLK_PIN, GPIO_PIN_RESET) //SCL
 #define OLED_SCLK_Set() HAL_GPIO_WritePin(OLED_SCLK_PORT, OLED_SCLK_PIN, GPIO_PIN_SET)
@@ -30,11 +30,11 @@
 #define OLED_SDIN_Set() HAL_GPIO_WritePin(OLED_SDIN_PORT, OLED_SDIN_PIN, GPIO_PIN_SET)
 
  		     
-#define OLED_CMD  0	//Ð´ÃüÁî
-#define OLED_DATA 1	//Ð´Êý¾Ý
+#define OLED_CMD  0	//Ð´ï¿½ï¿½ï¿½ï¿½
+#define OLED_DATA 1	//Ð´ï¿½ï¿½ï¿½ï¿½
 
 
-//OLED¿ØÖÆÓÃº¯Êý
+//OLEDï¿½ï¿½ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½
 void OLED_WR_Byte(unsigned dat,unsigned cmd);  
 void OLED_Display_On(void);
 void OLED_Display_Off(void);	   							   		    
